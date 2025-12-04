@@ -1,7 +1,12 @@
 import Link from "next/link";
 import { authStyles as styles } from "@/styles/authStyles";
 
-export default function AuthRightPanel({ title, description, buttonText, buttonLink }) {
+export default function AuthRightPanel({
+  title,
+  description,
+  buttonText,
+  buttonLink,
+}) {
   return (
     <div className={styles.rightPanel}>
       <h2 className="text-3xl font-bold mb-2">{title}</h2>

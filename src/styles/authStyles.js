@@ -1,10 +1,12 @@
 export const authStyles = {
-  container: "flex flex-col items-center justify-center min-h-screen py-8 bg-gray-100",
+  container:
+    "flex flex-col items-center justify-center min-h-screen py-8 bg-gray-100",
 
   mainBox: "bg-white rounded-xl shadow-xl flex w-4/5 max-w-4xl",
 
   leftPanel: "w-3/5 p-5",
-  rightPanel: "w-2/5 bg-purple-500 text-white rounded-tr-xl rounded-br-xl py-40 px-12",
+  rightPanel:
+    "w-2/5 bg-purple-500 text-white rounded-tr-xl rounded-br-xl py-40 px-12",
 
   contentContainer: "flex flex-col py-10 items-center self-center",
 
@@ -27,13 +29,13 @@ export const authStyles = {
 
   socialButtonsContainer: "flex justify-center my-3",
   socialButton:
-    "border-2 border-gray-300 rounded-full p-3 mx-1 bg-white transform transition duration-200 hover:shadow-xl hover:scale-105 hover:bg-purple-500 hover:text-white hover:border-purple-500  focus:outline-none focus:ring-2 focus:ring-purple-300 transform duration-400 hover:shadow-[0_4px_25px_rgba(0,0,0,0.1)]",
+    "border-2 border-gray-300 rounded-full p-3 mx-1 bg-white transform transition duration-200 hover:shadow-xl hover:scale-105 hover:bg-purple-500 hover:text-white hover:border-purple-500  focus:outline-none focus:ring-2 focus:ring-gray-100 transform duration-400 hover:shadow-[0_4px_25px_rgba(0,0,0,0.1)] cursor-pointer",
 
   primaryButton:
-    "border-2 border-purple-500 bg-purple-500 rounded-full px-12 py-2 inline-block font-semibold text-white transform transition duration-200 my-5 focus:outline-none focus:ring-2 focus:ring-purple-300",
+    "border-2 border-purple-500 bg-purple-500 rounded-full px-12 py-2 inline-block font-semibold text-white transform transition duration-200 my-5 focus:outline-none focus:ring-2 hover:shadow-lg hover:scale-105 focus:ring-gray-100",
 
   primaryButtonDisabled:
     "opacity-50 cursor-not-allowed hover:shadow-none hover:scale-100",
 
-  link: "text-purple-500 hover:text-purple-700 transition duration-300",
+  link: "text-purple-500 hover:text-purple-700 transition duration-300 cursor-pointer",
 };

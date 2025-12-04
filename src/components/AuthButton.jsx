@@ -5,7 +5,9 @@ export default function AuthButton({ disabled, children }) {
     <button
       disabled={disabled}
       className={`${styles.primaryButton} ${
-        disabled ? styles.primaryButtonDisabled : "hover:shadow-lg hover:scale-105"
+        disabled
+          ? styles.primaryButtonDisabled
+          : "hover:shadow-lg hover:scale-105"
       }`}
     >
       {children}

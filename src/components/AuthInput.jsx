@@ -1,6 +1,13 @@
 import { authStyles as styles } from "@/styles/authStyles";
 
-export default function AuthInput({ icon, type, placeholder, value, onChange, children }) {
+export default function AuthInput({
+  icon,
+  type,
+  placeholder,
+  value,
+  onChange,
+  children,
+}) {
   return (
     <div className={styles.inputBox}>
       <div className="flex items-center">

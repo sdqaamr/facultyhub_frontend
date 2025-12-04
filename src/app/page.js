@@ -1,10 +1,10 @@
-import LoginPage from './login/page';
+import AuthGateway from "./auth-gateway/page";
 
 const Home = () => {
-    return (
-      <div className="flex-grow">
-        <LoginPage />
-      </div>
-    );
-}
+  return (
+    <div className="flex-grow">
+      <AuthGateway />
+    </div>
+  );
+};
 export default Home;

@@ -30,7 +30,7 @@ export default function OtpVerified() {
 
               <div className="flex flex-col items-center">
                 <Link href="/login">
-                  <button className="border-2 border-purple-500 bg-purple-500 rounded-full px-12 py-2 inline-block font-semibold text-white transform transition duration-200 my-5 focus:outline-none focus:ring-2 focus:ring-purple-300 hover:shadow-lg hover:scale-105">
+                  <button className="border-2 border-purple-500 bg-purple-500 rounded-full px-12 py-2 inline-block font-semibold text-white transform transition duration-200 my-5 focus:outline-none focus:ring-2 hover:shadow-lg hover:scale-105 focus:ring-gray-100">
                     Continue to Login
                   </button>
                 </Link>

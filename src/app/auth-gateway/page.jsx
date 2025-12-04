@@ -32,21 +32,21 @@ export default function AuthGateway() {
 
               <div className="flex flex-col items-center">
                 <Link href="/login">
-                  <button className="border-2 border-purple-500 text-white rounded-full w-40 py-2 inline-block font-semibold my-1 bg-purple-500 hover:bg-white hover:text-purple-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-purple-300 hover:shadow-lg hover:scale-105">
+                  <button className="border-2 border-purple-500 text-white rounded-full w-40 py-2 inline-block font-semibold my-1 bg-purple-500 hover:bg-white hover:text-purple-600 transition duration-300 focus:outline-none focus:ring-2 hover:shadow-lg hover:scale-105 focus:ring-gray-100">
                     Login
                   </button>
                 </Link>
 
                 <Link href="/register">
-                  <button className="border-2 border-purple-500 text-purple-600 rounded-full w-41 py-2 inline-block font-semibold my-1 hover:bg-purple-500 hover:text-white transition duration-300 focus:outline-none focus:ring-2 focus:ring-purple-300 hover:shadow-lg hover:scale-105">
+                  <button className="border-2 border-purple-500 text-purple-600 rounded-full w-41 py-2 inline-block font-semibold my-1 hover:bg-purple-500 hover:text-white transition duration-300 focus:outline-none focus:ring-2 hover:shadow-lg hover:scale-105 focus:ring-gray-100">
                     Register
                   </button>
                 </Link>
 
                 <div className="text-center">
-                    <button className="text-purple-500 hover:text-purple-700 transition duration-300 text-sm mt-2 block">
-                      Continue as a Guest
-                    </button>
+                  <button className="text-purple-500 hover:text-purple-700 transition duration-300 text-sm mt-2 block">
+                    Continue as a Guest
+                  </button>
                 </div>
               </div>
             </div>
@@ -57,7 +57,8 @@ export default function AuthGateway() {
             <h2 className="text-3xl font-bold mb-2">Explore</h2>
             <div className="border-2 w-10 border-white inline-block mb-2"></div>
             <p className="mb-10">
-              Login or register to unlock all features and join our FacultyHub community. 
+              Login or register to unlock all features and join our FacultyHub
+              community.
             </p>
           </div>
         </div>

@@ -39,7 +39,7 @@ export default function OTP() {
           <div className="w-3/5 p-5">
             <div className="font-bold flex">
               <Link
-                href="/login"
+                href="/register"
                 className="flex items-center text-purple-500 hover:text-purple-700 transition duration-300"
               >
                 <FaArrowLeft className="mr-2" />
@@ -77,11 +77,11 @@ export default function OTP() {
                   ))}
                 </div>
 
-                <Link href="/password-reset">
+                <Link href="/otp-verified">
                   <button
                     disabled={!isValid}
                     aria-disabled={!isValid}
-                    className={`border-2 border-purple-500 bg-purple-500 rounded-full px-12 py-2 inline-block font-semibold text-white transform transition duration-200 my-5 focus:outline-none focus:ring-2 focus:ring-purple-300 ${
+                    className={`border-2 border-purple-500 bg-purple-500 rounded-full px-12 py-2 inline-block font-semibold text-white transform transition duration-200 my-5 focus:outline-none focus:ring-2 focus:ring-gray-100 ${
                       !isValid
                         ? "opacity-50 cursor-not-allowed hover:shadow-none hover:scale-100"
                         : "hover:shadow-lg hover:scale-105"

@@ -6,8 +6,8 @@ import { FaRegEnvelope, FaArrowLeft } from "react-icons/fa";
 import Link from "next/link";
 
 export default function PasswordForget() {
-    const [email, setEmail] = useState("");
-    const isValid = email.trim() !== "";
+  const [email, setEmail] = useState("");
+  const isValid = email.trim() !== "";
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-100">
       <Head>
@@ -28,12 +28,10 @@ export default function PasswordForget() {
               <span className="text-purple-500">FacultyHub</span>
             </div>
             <div className="py-18">
-              <h2 className="text-3xl font-bold mb-2">
-                Forgot Password?
-              </h2>
+              <h2 className="text-3xl font-bold mb-2">Forgot Password?</h2>
               <p className="text-gray-900 mb-10 max-w-120 pl-10">
-                Don't worry! happens. Enter your email address and we'll send you code to reset your
-                password.
+                Don't worry! happens. Enter your email address and we'll send
+                you code to reset your password.
               </p>
 
               <div className="flex flex-col items-center">
@@ -56,16 +54,16 @@ export default function PasswordForget() {
 
                 <Link href="/password-reset">
                   <button
-                  disabled={!isValid}
-                  aria-disabled={!isValid}
-                  className={`border-2 border-purple-500 bg-purple-500 rounded-full px-12 py-2 inline-block font-semibold text-white transform transition duration-200 my-5 focus:outline-none focus:ring-2 focus:ring-purple-300 ${
-                    !isValid
-                      ? "opacity-50 cursor-not-allowed hover:shadow-none hover:scale-100"
-                      : "hover:shadow-lg hover:scale-105"
-                  }`}
-                >
-                  Submit
-                </button>
+                    disabled={!isValid}
+                    aria-disabled={!isValid}
+                    className={`border-2 border-purple-500 bg-purple-500 rounded-full px-12 py-2 inline-block font-semibold text-white transform transition duration-200 my-5 focus:outline-none focus:ring-2 focus:ring-gray-100 ${
+                      !isValid
+                        ? "opacity-50 cursor-not-allowed hover:shadow-none hover:scale-100"
+                        : "hover:shadow-lg hover:scale-105"
+                    }`}
+                  >
+                    Submit
+                  </button>
                 </Link>
 
                 <div className="text-center">

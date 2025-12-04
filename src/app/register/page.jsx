@@ -14,6 +14,7 @@ import {
   FaEye,
   FaEyeSlash,
 } from "react-icons/fa";
+import { PiUserBold } from "react-icons/pi";
 
 import AuthInput from "@/components/AuthInput";
 import AuthButton from "@/components/AuthButton";
@@ -39,6 +40,14 @@ export default function Register() {
     password === confirmPassword &&
     acceptTerms;
 
+  function toggleShowPassword() {
+    setShowPassword((s) => !s);
+  }
+
+  function toggleShowConfirmPassword() {
+    setShowConfirmPassword((s) => !s);
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -57,7 +66,7 @@ export default function Register() {
 
               {/* Full Name */}
               <AuthInput
-                icon={<FaRegEnvelope />}
+                icon={<PiUserBold />}
                 type="text"
                 placeholder="Full Name"
                 value={fullName}
@@ -84,7 +93,8 @@ export default function Register() {
                 <button
                   type="button"
                   className="ml-2 text-gray-500"
-                  onClick={() => setShowPassword(!showPassword)}
+                  onClick={toggleShowPassword}
+                  aria-label={showPassword ? "Hide password" : "Show password"}
                 >
                   {showPassword ? <FaEye /> : <FaEyeSlash />}
                 </button>
@@ -94,14 +104,17 @@ export default function Register() {
               <AuthInput
                 icon={<FaLock />}
                 type={showConfirmPassword ? "text" : "password"}
-                placeholder="Confirm Password"
+                placeholder="Password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
               >
                 <button
                   type="button"
                   className="ml-2 text-gray-500"
-                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                  onClick={toggleShowConfirmPassword}
+                  aria-label={
+                    showConfirmPassword ? "Hide password" : "Show password"
+                  }
                 >
                   {showConfirmPassword ? <FaEye /> : <FaEyeSlash />}
                 </button>
@@ -137,7 +150,7 @@ export default function Register() {
               </div>
 
               {/* Register Button */}
-              <Link href="/register-success">
+              <Link href="/otp">
                 <AuthButton disabled={!isValid}>Register</AuthButton>
               </Link>
 

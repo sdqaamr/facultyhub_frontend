@@ -11,7 +11,10 @@ export default function PasswordReset() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const isValid = newPassword.trim() !== "" && confirmPassword.trim() !== "" && newPassword === confirmPassword;
+  const isValid =
+    newPassword.trim() !== "" &&
+    confirmPassword.trim() !== "" &&
+    newPassword === confirmPassword;
   function toggleShowNewPassword() {
     setShowNewPassword((s) => !s);
   }
@@ -30,7 +33,7 @@ export default function PasswordReset() {
           <div className="w-3/5 p-5">
             <div className="font-bold flex">
               <Link
-                href="/login"
+                href="/password-forget"
                 className="flex items-center text-purple-500 hover:text-purple-700 transition duration-300"
               >
                 <FaArrowLeft className="mr-2" />
@@ -107,16 +110,16 @@ export default function PasswordReset() {
 
                 <Link href="/password-changed">
                   <button
-                  disabled={!isValid}
-                  aria-disabled={!isValid}
-                  className={`border-2 border-purple-500 bg-purple-500 rounded-full px-12 py-2 inline-block font-semibold text-white transform transition duration-200 my-5 focus:outline-none focus:ring-2 focus:ring-purple-300 ${
-                    !isValid
-                      ? "opacity-50 cursor-not-allowed hover:shadow-none hover:scale-100"
-                      : "hover:shadow-lg hover:scale-105"
-                  }`}
-                >
-                  Submit
-                </button>
+                    disabled={!isValid}
+                    aria-disabled={!isValid}
+                    className={`border-2 border-purple-500 bg-purple-500 rounded-full px-12 py-2 inline-block font-semibold text-white transform transition duration-200 my-5 focus:outline-none focus:ring-2 focus:ring-gray-100 ${
+                      !isValid
+                        ? "opacity-50 cursor-not-allowed hover:shadow-none hover:scale-100"
+                        : "hover:shadow-lg hover:scale-105"
+                    }`}
+                  >
+                    Submit
+                  </button>
                 </Link>
 
                 <div className="text-center">
