@@ -3,13 +3,16 @@
 import { useState } from "react";
 
 import PersonalInfo from "@/components/PersonalInfo";
-// import Education from "@/components/dashboard/Education";
-// import Research from "@/components/dashboard/Research";
-// import Publications from "@/components/dashboard/Publications";
-// import Projects from "@/components/dashboard/Projects";
-// import Awards from "@/components/dashboard/Awards";
-// import Account from "@/components/dashboard/Account";
-// import Settings from "@/components/dashboard/Settings";
+import Education from "@/components/Education";
+import Conferences from "@/components/Conferences";
+import Workshops from "@/components/Workshops";
+import ResearchProjects from "@/components/ResearchProjects";
+import Publications from "@/components/Publications";
+// import ResearchDomain from "@/components/ResearchDomain";
+// import Collaborations from "@/components/Collaborations";
+// import Patents from "@/components/patents";
+// import EmploymentRecord from "@/components/EmploymentRecord";
+// import Awards from "@/components/Awards";
 import TopRightLogo from "@/components/TopRightLogo";
 
 export default function FacultyDashboard() {
@@ -18,31 +21,36 @@ export default function FacultyDashboard() {
   return (
     <div className="min-h-screen bg-gray-100 flex">
       {/* LEFT SIDEBAR */}
-      <div className="w-64 bg-white shadow-lg p-6 border-r border-gray-300 flex flex-col h-screen fixed left-0 top-0 justify-between">
+      <div className="w-70 bg-white shadow-lg p-6 border-r border-gray-300 flex flex-col h-screen fixed left-0 top-0 justify-between">
         {/* Top Navigation Tabs */}
         <div>
           <TopRightLogo />
 
-          <ul className="space-y-1.5 mt-8">
+          <ul className="space-y-1 mt-5">
             {[
-              "personal",
-              "education",
-              "research",
-              "publications",
-              "projects",
-              "awards",
+              "Personal",
+              "Education",
+              "Conferences",
+              "Workshops",
+              "Research Projects",
+              "Publications",
+              "Research Domain",
+              "Collaborations & Editorships",
+              "Patents",
+              "Employment Record",
+              "Awards",
             ].map((tab) => (
               <li key={tab}>
                 <button
                   onClick={() => setActiveTab(tab)}
-                  className={`w-full text-left px-4 py-1.5 rounded-lg font-medium transition 
+                  className={`w-full text-left px-3 py-1.5 rounded-lg font-medium transition 
               ${
                 activeTab === tab
                   ? "bg-purple-100 text-purple-600"
                   : "hover:bg-gray-100"
               }`}
                 >
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                  {tab}
                 </button>
               </li>
             ))}
@@ -96,17 +104,22 @@ export default function FacultyDashboard() {
      {/* <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} /> */}
 
       {/* Right Panel */}
-      <div className="p-8 ml-64 flex-1">
+      <div className="p-8 ml-70 flex-1">
 
-        {activeTab === "personal" && <PersonalInfo />}
-        {/* {activeTab === "education" && <Education />}
-        {activeTab === "research" && <Research />}
-        {activeTab === "publications" && <Publications />}
-        {activeTab === "projects" && <Projects />}
-        {activeTab === "awards" && <Awards />}
-
-        {activeTab === "account" && <Account />}
-        {activeTab === "settings" && <Settings />} */}
+        {activeTab === "Personal" && <PersonalInfo />}
+        {activeTab === "Education" && <Education />}
+        {activeTab === "Conferences" && <Conferences />}
+        {activeTab === "Workshops" && <Workshops />}
+        {activeTab === "Research Projects" && <ResearchProjects />}
+        {activeTab === "Publications" && <Publications />}
+        {/* {activeTab === "Research Domain" && <ResearchDomain />} */}
+        {/* {activeTab === "Collaborations & Editorships" && <Collaborations />} */}
+        {/* {activeTab === "Patents" && <Patents />} */}
+        {/* {activeTab === "Employment Record" && <EmploymentRecord />} */}
+        {/* {activeTab === "awards" && <Awards />} */}
+        {/* {activeTab === "account" && <Account />} */}
+        {/* {activeTab === "settings" && <Settings />} */}
+        {/* {activeTab === "logout" && <Logout />} */}
       </div>
     </div>
   );
