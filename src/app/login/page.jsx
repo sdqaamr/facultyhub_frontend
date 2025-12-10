@@ -102,7 +102,7 @@ export default function Login() {
               </div>
 
               {/* Register Button */}
-              <Link href="/home">
+              <Link href="/dashboard">
                 <AuthButton disabled={!isValid}>Login</AuthButton>
               </Link>
 
