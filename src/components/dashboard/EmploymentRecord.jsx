@@ -28,7 +28,6 @@ export default function EmploymentRecord() {
 
       {/* Grid layout */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 justify-evenly mt-2 mb-5">
-
         {/* Organization */}
         <div className="align-left flex flex-col">
           <label
@@ -38,8 +37,10 @@ export default function EmploymentRecord() {
             Organization<span className="text-red-500"> *</span>
           </label>
 
-          <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 mb-1 
-            focus-within:border-purple-500 hover:border-purple-500 transition-colors duration-200">
+          <div
+            className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 mb-1 
+            focus-within:border-purple-500 hover:border-purple-500 transition-colors duration-200"
+          >
             <div className="flex items-center">
               <FaBuilding className="text-gray-400 text-lg mr-2" />
               <input
@@ -61,11 +62,14 @@ export default function EmploymentRecord() {
             htmlFor="sectorType"
             className="taxt-gray-700 font-medium text-left ml-1 mb-1"
           >
-            Government / Semi-Gov / Private<span className="text-red-500"> *</span>
+            Government / Semi-Gov / Private
+            <span className="text-red-500"> *</span>
           </label>
 
-          <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 mb-1 
-            focus-within:border-purple-500 hover:border-purple-500 transition-colors duration-200">
+          <div
+            className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 mb-1 
+            focus-within:border-purple-500 hover:border-purple-500 transition-colors duration-200"
+          >
             <div className="flex items-center">
               <MdWork className="text-gray-400 text-lg mr-2" />
               <input
@@ -90,8 +94,10 @@ export default function EmploymentRecord() {
             Post<span className="text-red-500"> *</span>
           </label>
 
-          <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 mb-1 
-            focus-within:border-purple-500 hover:border-purple-500 transition-colors duration-200">
+          <div
+            className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 mb-1 
+            focus-within:border-purple-500 hover:border-purple-500 transition-colors duration-200"
+          >
             <div className="flex items-center">
               <FaUserTie className="text-gray-400 text-lg mr-2" />
               <input
@@ -117,8 +123,10 @@ export default function EmploymentRecord() {
             <span className="text-red-500"> *</span>
           </label>
 
-          <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 mb-1 
-            focus-within:border-purple-500 hover:border-purple-500 transition-colors duration-200">
+          <div
+            className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 mb-1 
+            focus-within:border-purple-500 hover:border-purple-500 transition-colors duration-200"
+          >
             <div className="flex items-center">
               <MdWork className="text-gray-400 text-lg mr-2" />
               <input
@@ -143,8 +151,10 @@ export default function EmploymentRecord() {
             Date From<span className="text-red-500"> *</span>
           </label>
 
-          <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 mb-1 
-            focus-within:border-purple-500 hover:border-purple-500 transition-colors duration-200">
+          <div
+            className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 mb-1 
+            focus-within:border-purple-500 hover:border-purple-500 transition-colors duration-200"
+          >
             <div className="flex items-center">
               <MdDateRange className="text-gray-400 text-lg mr-2" />
               <input
@@ -167,8 +177,10 @@ export default function EmploymentRecord() {
             Date To<span className="text-red-500"> *</span>
           </label>
 
-          <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 mb-1 
-            focus-within:border-purple-500 hover:border-purple-500 transition-colors duration-200">
+          <div
+            className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 mb-1 
+            focus-within:border-purple-500 hover:border-purple-500 transition-colors duration-200"
+          >
             <div className="flex items-center">
               <MdDateRange className="text-gray-400 text-lg mr-2" />
               <input

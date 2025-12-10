@@ -22,7 +22,6 @@ export default function Awards() {
 
       {/* Grid layout */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 justify-evenly mt-2 mb-5">
-
         {/* Award Name */}
         <div className="align-left flex flex-col">
           <label
@@ -33,8 +32,10 @@ export default function Awards() {
             <span className="text-red-500"> *</span>
           </label>
 
-          <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 mb-1 
-            focus-within:border-purple-500 hover:border-purple-500 transition-colors duration-200">
+          <div
+            className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 mb-1 
+            focus-within:border-purple-500 hover:border-purple-500 transition-colors duration-200"
+          >
             <div className="flex items-center">
               <FaTrophy className="text-gray-400 text-lg mr-2" />
               <input
@@ -60,8 +61,10 @@ export default function Awards() {
             <span className="text-red-500"> *</span>
           </label>
 
-          <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 mb-1 
-            focus-within:border-purple-500 hover:border-purple-500 transition-colors duration-200">
+          <div
+            className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 mb-1 
+            focus-within:border-purple-500 hover:border-purple-500 transition-colors duration-200"
+          >
             <div className="flex items-center">
               <MdDateRange className="text-gray-400 text-lg mr-2" />
               <input
@@ -87,8 +90,10 @@ export default function Awards() {
             <span className="text-red-500"> *</span>
           </label>
 
-          <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 mb-1 
-            focus-within:border-purple-500 hover:border-purple-500 transition-colors duration-200">
+          <div
+            className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 mb-1 
+            focus-within:border-purple-500 hover:border-purple-500 transition-colors duration-200"
+          >
             <div className="flex items-center">
               <MdPublic className="text-gray-400 text-lg mr-2" />
               <input
@@ -103,7 +108,6 @@ export default function Awards() {
             </div>
           </div>
         </div>
-
       </div>
 
       {/* Buttons */}

@@ -38,7 +38,6 @@ export default function Education() {
 
       {/* Grid layout */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-2 mb-5">
-        
         {/* University Name */}
         <div className="flex flex-col">
           <label
@@ -240,7 +239,6 @@ export default function Education() {
             </div>
           </div>
         </div>
-
       </div>
 
       {/* Buttons */}

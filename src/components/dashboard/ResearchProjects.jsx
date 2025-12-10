@@ -98,9 +98,7 @@ export default function ResearchProjects() {
               type="text"
               placeholder="Principal Investigator"
               value={awarded.role}
-              onChange={(e) =>
-                setAwarded({ ...awarded, role: e.target.value })
-              }
+              onChange={(e) => setAwarded({ ...awarded, role: e.target.value })}
               className="bg-transparent outline-none w-full"
             />
           </div>

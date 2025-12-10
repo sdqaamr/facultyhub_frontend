@@ -11,7 +11,10 @@ export default function ResearchDomain() {
 
   const isValid =
     researchArea.trim() !== "" &&
-    keywords.trim().split(",").filter((k) => k.trim() !== "").length >= 5 &&
+    keywords
+      .trim()
+      .split(",")
+      .filter((k) => k.trim() !== "").length >= 5 &&
     sdg.trim() !== "";
 
   return (
@@ -23,7 +26,6 @@ export default function ResearchDomain() {
 
       {/* Grid layout */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 justify-evenly mt-2 mb-5">
-        
         {/* Research Area */}
         <div className="flex flex-col">
           <label
@@ -79,10 +81,7 @@ export default function ResearchDomain() {
 
         {/* Targeted SDG */}
         <div className="flex flex-col">
-          <label
-            htmlFor="sdg"
-            className="text-gray-700 font-medium ml-1 mb-1"
-          >
+          <label htmlFor="sdg" className="text-gray-700 font-medium ml-1 mb-1">
             Targeted SDG<span className="text-red-500"> *</span>
           </label>
 
@@ -101,7 +100,6 @@ export default function ResearchDomain() {
             </div>
           </div>
         </div>
-
       </div>
 
       {/* Buttons */}

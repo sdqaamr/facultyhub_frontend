@@ -44,9 +44,11 @@ export default function AuthGateway() {
                 </Link>
 
                 <div className="text-center">
+                  <Link href="/dashboard">
                   <button className="text-purple-500 hover:text-purple-700 transition duration-300 text-sm mt-2 block">
                     Continue as a Guest
                   </button>
+                  </Link>
                 </div>
               </div>
             </div>

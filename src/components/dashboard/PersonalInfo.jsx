@@ -39,7 +39,9 @@ export default function PersonalInfo() {
   return (
     <div className="bg-white shadow-md rounded-xl p-8">
       <h1 className="text-2xl font-semibold mb-1">Personal Information</h1>
-      <p className="text-gray-600 mb-6">Please fill your professional details.</p>
+      <p className="text-gray-600 mb-6">
+        Please fill your professional details.
+      </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-2 mb-5">
         {/* Full Name */}
@@ -83,7 +85,8 @@ export default function PersonalInfo() {
         {/* Specialization */}
         <div className="flex flex-col">
           <label className="text-gray-700 font-medium ml-1 mb-1">
-            Subject / Major Specialization <span className="text-red-500">*</span>
+            Subject / Major Specialization{" "}
+            <span className="text-red-500">*</span>
           </label>
           <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 hover:border-purple-500 focus-within:border-purple-500 transition">
             <div className="flex items-center">

@@ -1,16 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import {
-  FaUserAlt,
-  FaBook,
-  FaGlobe,
-  FaLink,
-} from "react-icons/fa";
+import { FaUserAlt, FaBook, FaGlobe, FaLink } from "react-icons/fa";
 import { MdOutlineCategory } from "react-icons/md";
+import { Globe } from "lucide-react";
 
 export default function ResearchPublications() {
-  /* ------------------------- Journal Papers ------------------------- */
   const [journal, setJournal] = useState({
     authorType: "",
     title: "",
@@ -25,7 +20,6 @@ export default function ResearchPublications() {
     hrjsCategory: "",
   });
 
-  /* ------------------------- Abstracts ------------------------- */
   const [abstracts, setAbstracts] = useState({
     title: "",
     conferenceName: "",
@@ -35,7 +29,6 @@ export default function ResearchPublications() {
     mode: "",
   });
 
-  /* ------------------------- Books ------------------------- */
   const [books, setBooks] = useState({
     title: "",
     author: "",
@@ -44,7 +37,6 @@ export default function ResearchPublications() {
     type: "",
   });
 
-  /* ------------------------- Book Chapters ------------------------- */
   const [chapters, setChapters] = useState({
     title: "",
     author: "",
@@ -67,279 +59,493 @@ export default function ResearchPublications() {
     journal.hrjsCategory;
 
   return (
-    <div className="bg-white shadow-md rounded-xl p-8">
-      <h1 className="text-2xl font-semibold mb-1">Research Publications</h1>
-      <p className="text-gray-600 mb-6">
+    <div className="bg-white shadow-md rounded-xl p-8 space-y-6">
+      <h1 className="text-2xl font-semibold">Research Publications</h1>
+      <p className="text-gray-600">
         Enter your research publication and related academic contributions.
       </p>
 
-      {/* ----------------------------------------------------------- */}
-      {/* ------------------- JOURNAL PUBLICATIONS ------------------ */}
-      {/* ----------------------------------------------------------- */}
-
-      <h2 className="text-lg font-semibold mb-4">Journal Papers</h2>
-
+      {/* JOURNAL PAPERS */}
+      <h2 className="text-lg font-semibold">Journal Papers</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-
         {/* Author Type */}
-        <FieldSelect
-          label="Author / Corresponding Author *"
-          icon={<FaUserAlt className="text-gray-400 mr-2" />}
-          value={journal.authorType}
-          onChange={(v) => setJournal({ ...journal, authorType: v })}
-          options={["Author", "Corresponding Author"]}
-        />
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">
+            Author / Corresponding Author
+            <span className="text-red-500"> *</span>
+          </label>
+          <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2 hover:border-purple-500 focus-within:border-purple-500 transition">
+            <FaUserAlt className="text-gray-400 mr-2" />
+            <select
+              value={journal.authorType}
+              onChange={(e) =>
+                setJournal({ ...journal, authorType: e.target.value })
+              }
+              className="bg-transparent w-full outline-none"
+            >
+              <option value="">Select</option>
+              <option value="Author">Author</option>
+              <option value="Corresponding Author">Corresponding Author</option>
+            </select>
+          </div>
+        </div>
 
         {/* Publication Title */}
-        <FieldInput
-          label="Publication Title *"
-          icon={<FaBook className="text-gray-400 mr-2" />}
-          value={journal.title}
-          placeholder="Enter title"
-          onChange={(v) => setJournal({ ...journal, title: v })}
-        />
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">
+            Publication Title<span className="text-red-500"> *</span>
+          </label>
+          <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2 hover:border-purple-500 focus-within:border-purple-500 transition">
+            <FaBook className="text-gray-400 mr-2" />
+            <input
+              type="text"
+              placeholder="Enter title"
+              value={journal.title}
+              onChange={(e) =>
+                setJournal({ ...journal, title: e.target.value })
+              }
+              className="bg-transparent w-full outline-none"
+            />
+          </div>
+        </div>
 
         {/* Journal Name */}
-        <FieldInput
-          label="Journal Name *"
-          icon={<FaBook className="text-gray-400 mr-2" />}
-          value={journal.journalName}
-          placeholder="Enter journal name"
-          onChange={(v) => setJournal({ ...journal, journalName: v })}
-        />
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">
+            Journal Name<span className="text-red-500"> *</span>
+          </label>
+          <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2 hover:border-purple-500 focus-within:border-purple-500 transition">
+            <FaBook className="text-gray-400 mr-2" />
+            <input
+              type="text"
+              placeholder="Enter journal name"
+              value={journal.journalName}
+              onChange={(e) =>
+                setJournal({ ...journal, journalName: e.target.value })
+              }
+              className="bg-transparent w-full outline-none"
+            />
+          </div>
+        </div>
 
         {/* Publishing Year */}
-        <FieldInput
-          label="Publishing Year *"
-          type="number"
-          icon={<FaBook className="text-gray-400 mr-2" />}
-          placeholder="2024"
-          value={journal.publishingYear}
-          onChange={(v) => setJournal({ ...journal, publishingYear: v })}
-        />
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">
+            Publishing Year<span className="text-red-500"> *</span>
+          </label>
+          <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2 hover:border-purple-500 focus-within:border-purple-500 transition">
+            <FaBook className="text-gray-400 mr-2" />
+            <input
+              type="number"
+              placeholder="2024"
+              value={journal.publishingYear}
+              onChange={(e) =>
+                setJournal({ ...journal, publishingYear: e.target.value })
+              }
+              className="bg-transparent w-full outline-none"
+            />
+          </div>
+        </div>
 
         {/* Volume */}
-        <FieldInput
-          label="Journal Volume *"
-          icon={<FaBook className="text-gray-400 mr-2" />}
-          placeholder="7(3)"
-          value={journal.volume}
-          onChange={(v) => setJournal({ ...journal, volume: v })}
-        />
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">
+            Journal Volume<span className="text-red-500"> *</span>
+          </label>
+          <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2 hover:border-purple-500 focus-within:border-purple-500 transition">
+            <FaBook className="text-gray-400 mr-2" />
+            <input
+              type="text"
+              placeholder="7(3)"
+              value={journal.volume}
+              onChange={(e) =>
+                setJournal({ ...journal, volume: e.target.value })
+              }
+              className="bg-transparent w-full outline-none"
+            />
+          </div>
+        </div>
 
         {/* Impact Factor */}
-        <FieldInput
-          label="Impact Factor *"
-          icon={<FaBook className="text-gray-400 mr-2" />}
-          placeholder="5.13"
-          value={journal.impactFactor}
-          onChange={(v) => setJournal({ ...journal, impactFactor: v })}
-        />
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">
+            Impact Factor<span className="text-red-500"> *</span>
+          </label>
+          <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2 hover:border-purple-500 focus-within:border-purple-500 transition">
+            <FaBook className="text-gray-400 mr-2" />
+            <input
+              type="text"
+              placeholder="5.13"
+              value={journal.impactFactor}
+              onChange={(e) =>
+                setJournal({ ...journal, impactFactor: e.target.value })
+              }
+              className="bg-transparent w-full outline-none"
+            />
+          </div>
+        </div>
       </div>
 
-      {/* Example Field */}
-      <div className="flex flex-col mt-5">
-        <label className="text-gray-700 font-medium ml-1 mb-1">
-          Example Reference *
+      {/* Example */}
+      <div className="flex flex-col">
+        <label className="text-gray-700 mb-1">
+          Example Reference<span className="text-red-500"> *</span>
         </label>
         <textarea
           value={journal.example}
-          onChange={(e) =>
-            setJournal({ ...journal, example: e.target.value })
-          }
           placeholder="Paste full reference..."
           rows={4}
-          className="border-2 border-gray-200 bg-gray-100 rounded-md p-3
-          focus-within:border-purple-500 hover:border-purple-500 outline-none resize-none"
+          onChange={(e) => setJournal({ ...journal, example: e.target.value })}
+          className="border-2 border-gray-200 bg-gray-100 rounded-md p-3 resize-none focus:border-purple-500 hover:border-purple-500 outline-none"
         />
       </div>
 
       {/* DOI */}
-      <FieldInput
-        full
-        label="DOI / URL *"
-        icon={<FaLink className="text-gray-400 mr-2" />}
-        placeholder="Enter DOI or URL"
-        value={journal.doiUrl}
-        onChange={(v) => setJournal({ ...journal, doiUrl: v })}
-      />
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-
-        {/* Journal Type */}
-        <FieldSelect
-          label="Journal Type *"
-          icon={<FaGlobe className="text-gray-400 mr-2" />}
-          value={journal.journalType}
-          onChange={(v) => setJournal({ ...journal, journalType: v })}
-          options={["National", "International"]}
-        />
-
-        {/* HEC Recognized */}
-        <FieldSelect
-          label="HEC Recognized *"
-          value={journal.hecRecognized}
-          onChange={(v) => setJournal({ ...journal, hecRecognized: v })}
-          options={["Yes", "No"]}
-        />
-
-        {/* HRJS */}
-        <FieldInput
-          label="HRJS Category *"
-          icon={<MdOutlineCategory className="text-gray-400 mr-2" />}
-          placeholder="Enter category"
-          value={journal.hrjsCategory}
-          onChange={(v) => setJournal({ ...journal, hrjsCategory: v })}
-        />
+      <div className="flex flex-col">
+        <label className="text-gray-700 mb-1">
+          DOI / URL<span className="text-red-500"> *</span>
+        </label>
+        <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2 hover:border-purple-500 focus-within:border-purple-500 transition">
+          <FaLink className="text-gray-400 mr-2" />
+          <input
+            type="text"
+            placeholder="Enter DOI or URL"
+            value={journal.doiUrl}
+            onChange={(e) => setJournal({ ...journal, doiUrl: e.target.value })}
+            className="bg-transparent w-full outline-none"
+          />
+        </div>
       </div>
 
-      {/* ----------------------------------------------------------- */}
-      {/* -------------------- ABSTRACTS SECTION -------------------- */}
-      {/* ----------------------------------------------------------- */}
+      {/* Journal Type, HEC, HRJS */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">
+            Journal Type<span className="text-red-500"> *</span>
+          </label>
+          <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2 hover:border-purple-500 focus-within:border-purple-500 transition">
+            <FaGlobe className="text-gray-400 mr-2" />
+            <select
+              value={journal.journalType}
+              onChange={(e) =>
+                setJournal({ ...journal, journalType: e.target.value })
+              }
+              className="bg-transparent w-full outline-none"
+            >
+              <option value="">Select</option>
+              <option value="National">National</option>
+              <option value="International">International</option>
+            </select>
+          </div>
+        </div>
 
-      <h2 className="text-lg font-semibold mt-12 mb-4">
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">
+            HEC Recognized<span className="text-red-500"> *</span>
+          </label>
+          <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2 hover:border-purple-500 focus-within:border-purple-500 transition">
+            <select
+              value={journal.hecRecognized}
+              onChange={(e) =>
+                setJournal({ ...journal, hecRecognized: e.target.value })
+              }
+              className="bg-transparent w-full outline-none"
+            >
+              <option value="">Select</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+        </div>
+
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">
+            HRJS Category<span className="text-red-500"> *</span>
+          </label>
+          <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2 hover:border-purple-500 focus-within:border-purple-500 transition">
+            <MdOutlineCategory className="text-gray-400 mr-2" />
+            <input
+              type="text"
+              placeholder="Enter category"
+              value={journal.hrjsCategory}
+              onChange={(e) =>
+                setJournal({ ...journal, hrjsCategory: e.target.value })
+              }
+              className="bg-transparent w-full outline-none"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* ABSTRACTS */}
+      <h2 className="text-lg font-semibold mt-6">
         Abstracts in Conference Proceedings
       </h2>
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <FieldInput
-          label="Title"
-          icon={<FaBook className="text-gray-400 mr-2" />}
-          placeholder="Enter title"
-          value={abstracts.title}
-          onChange={(v) => setAbstracts({ ...abstracts, title: v })}
-        />
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">Title</label>
+          <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2">
+            <FaBook className="text-gray-400 mr-2" />
+            <input
+              type="text"
+              placeholder="Enter title"
+              value={abstracts.title}
+              onChange={(e) =>
+                setAbstracts({ ...abstracts, title: e.target.value })
+              }
+              className="bg-transparent w-full outline-none"
+            />
+          </div>
+        </div>
 
-        <FieldInput
-          label="Conference Name"
-          icon={<FaBook className="text-gray-400 mr-2" />}
-          placeholder="Enter conference name"
-          value={abstracts.conferenceName}
-          onChange={(v) => setAbstracts({ ...abstracts, conferenceName: v })}
-        />
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">Conference Name</label>
+          <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2">
+            <FaBook className="text-gray-400 mr-2" />
+            <input
+              type="text"
+              placeholder="Enter conference name"
+              value={abstracts.conferenceName}
+              onChange={(e) =>
+                setAbstracts({ ...abstracts, conferenceName: e.target.value })
+              }
+              className="bg-transparent w-full outline-none"
+            />
+          </div>
+        </div>
 
-        <FieldInput
-          label="Date"
-          type="date"
-          icon={<FaBook className="text-gray-400 mr-2" />}
-          value={abstracts.date}
-          onChange={(v) => setAbstracts({ ...abstracts, date: v })}
-        />
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">Date</label>
+          <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2">
+            <FaBook className="text-gray-400 mr-2" />
+            <input
+              type="date"
+              value={abstracts.date}
+              onChange={(e) =>
+                setAbstracts({ ...abstracts, date: e.target.value })
+              }
+              className="bg-transparent w-full outline-none"
+            />
+          </div>
+        </div>
 
-        <FieldInput
-          label="Page #"
-          icon={<FaBook className="text-gray-400 mr-2" />}
-          value={abstracts.page}
-          onChange={(v) => setAbstracts({ ...abstracts, page: v })}
-        />
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">Page #</label>
+          <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2">
+            <FaBook className="text-gray-400 mr-2" />
+            <input
+              type="text"
+              placeholder="e.g., 45-47"
+              value={abstracts.page}
+              onChange={(e) =>
+                setAbstracts({ ...abstracts, page: e.target.value })
+              }
+              className="bg-transparent w-full outline-none"
+            />
+          </div>
+        </div>
 
-        <FieldSelect
-          label="National / International"
-          value={abstracts.type}
-          onChange={(v) => setAbstracts({ ...abstracts, type: v })}
-          options={["National", "International"]}
-        />
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">National / International</label>
+          <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2">
+            <Globe className="text-gray-500 mr-2 w-4 h-4" />
+            <select
+              value={abstracts.type}
+              onChange={(e) =>
+                setAbstracts({ ...abstracts, type: e.target.value })
+              }
+              className="bg-transparent w-full outline-none"
+            >
+              <option value="">Select</option>
+              <option value="National">National</option>
+              <option value="International">International</option>
+            </select>
+          </div>
+        </div>
 
-        <FieldSelect
-          label="Oral / Poster"
-          value={abstracts.mode}
-          onChange={(v) => setAbstracts({ ...abstracts, mode: v })}
-          options={["Oral", "Poster"]}
-        />
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">Oral / Poster</label>
+          <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2">
+            <select
+              value={abstracts.mode}
+              onChange={(e) =>
+                setAbstracts({ ...abstracts, mode: e.target.value })
+              }
+              className="bg-transparent w-full outline-none"
+            >
+              <option value="">Select</option>
+              <option value="Oral">Oral</option>
+              <option value="Poster">Poster</option>
+            </select>
+          </div>
+        </div>
       </div>
 
-      {/* ----------------------------------------------------------- */}
-      {/* ---------------------- BOOKS SECTION ---------------------- */}
-      {/* ----------------------------------------------------------- */}
-      <h2 className="text-lg font-semibold mt-12 mb-4">Books</h2>
-
+      {/* BOOKS */}
+      <h2 className="text-lg font-semibold mt-6">Books</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <FieldInput
-          label="Title"
-          icon={<FaBook className="text-gray-400 mr-2" />}
-          value={books.title}
-          onChange={(v) => setBooks({ ...books, title: v })}
-        />
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">Title</label>
+          <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2">
+            <FaBook className="text-gray-400 mr-2" />
+            <input
+              type="text"
+              placeholder="Enter book title"
+              value={books.title}
+              onChange={(e) => setBooks({ ...books, title: e.target.value })}
+              className="bg-transparent w-full outline-none"
+            />
+          </div>
+        </div>
 
-        <FieldInput
-          label="Author / Editor"
-          icon={<FaUserAlt className="text-gray-400 mr-2" />}
-          value={books.author}
-          onChange={(v) => setBooks({ ...books, author: v })}
-        />
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">Author / Editor</label>
+          <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2">
+            <FaUserAlt className="text-gray-400 mr-2" />
+            <input
+              type="text"
+              placeholder="Enter author or editor name"
+              value={books.author}
+              onChange={(e) => setBooks({ ...books, author: e.target.value })}
+              className="bg-transparent w-full outline-none"
+            />
+          </div>
+        </div>
 
-        <FieldInput
-          label="Publishing Year"
-          type="number"
-          icon={<FaBook className="text-gray-400 mr-2" />}
-          value={books.year}
-          onChange={(v) => setBooks({ ...books, year: v })}
-        />
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">Publishing Year</label>
+          <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2">
+            <FaBook className="text-gray-400 mr-2" />
+            <input
+              type="number"
+              placeholder="e.g., 2024"
+              value={books.year}
+              onChange={(e) => setBooks({ ...books, year: e.target.value })}
+              className="bg-transparent w-full outline-none"
+            />
+          </div>
+        </div>
 
-        <FieldInput
-          label="Publishing Agency"
-          icon={<FaBook className="text-gray-400 mr-2" />}
-          value={books.agency}
-          onChange={(v) => setBooks({ ...books, agency: v })}
-        />
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">Publishing Agency</label>
+          <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2">
+            <FaBook className="text-gray-400 mr-2" />
+            <input
+              type="text"
+              placeholder="Enter agency name"
+              value={books.agency}
+              onChange={(e) => setBooks({ ...books, agency: e.target.value })}
+              className="bg-transparent w-full outline-none"
+            />
+          </div>
+        </div>
 
-        <FieldSelect
-          label="National / International"
-          value={books.type}
-          onChange={(v) => setBooks({ ...books, type: v })}
-          options={["National", "International"]}
-        />
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">National / International</label>
+          <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2">
+            <Globe className="text-gray-500 mr-2 w-4 h-4" />
+            <select
+              value={books.type}
+              onChange={(e) => setBooks({ ...books, type: e.target.value })}
+              className="bg-transparent w-full outline-none"
+            >
+              <option value="">Select</option>
+              <option value="National">National</option>
+              <option value="International">International</option>
+            </select>
+          </div>
+        </div>
       </div>
 
-      {/* ----------------------------------------------------------- */}
-      {/* ------------------- BOOK CHAPTERS SECTION ----------------- */}
-      {/* ----------------------------------------------------------- */}
-      <h2 className="text-lg font-semibold mt-12 mb-4">Book Chapters</h2>
-
+      {/* BOOK CHAPTERS */}
+      <h2 className="text-lg font-semibold mt-6">Book Chapters</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <FieldInput
-          label="Chapter Title"
-          icon={<FaBook className="text-gray-400 mr-2" />}
-          value={chapters.title}
-          onChange={(v) => setChapters({ ...chapters, title: v })}
-        />
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">Chapter Title</label>
+          <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2">
+            <FaBook className="text-gray-400 mr-2" />
+            <input
+              type="text"
+              placeholder="Enter chapter title"
+              value={chapters.title}
+              onChange={(e) =>
+                setChapters({ ...chapters, title: e.target.value })
+              }
+              className="bg-transparent w-full outline-none"
+            />
+          </div>
+        </div>
 
-        <FieldInput
-          label="Author"
-          icon={<FaUserAlt className="text-gray-400 mr-2" />}
-          value={chapters.author}
-          onChange={(v) => setChapters({ ...chapters, author: v })}
-        />
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">Author</label>
+          <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2">
+            <FaUserAlt className="text-gray-400 mr-2" />
+            <input
+              type="text"
+              placeholder="Enter author name"
+              value={chapters.author}
+              onChange={(e) =>
+                setChapters({ ...chapters, author: e.target.value })
+              }
+              className="bg-transparent w-full outline-none"
+            />
+          </div>
+        </div>
 
-        <FieldInput
-          label="Book Name"
-          icon={<FaBook className="text-gray-400 mr-2" />}
-          value={chapters.bookName}
-          onChange={(v) => setChapters({ ...chapters, bookName: v })}
-        />
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">Book Name</label>
+          <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2">
+            <FaBook className="text-gray-400 mr-2" />
+            <input
+              type="text"
+              placeholder="Enter book name"
+              value={chapters.bookName}
+              onChange={(e) =>
+                setChapters({ ...chapters, bookName: e.target.value })
+              }
+              className="bg-transparent w-full outline-none"
+            />
+          </div>
+        </div>
 
-        <FieldInput
-          label="Publishing Year"
-          type="number"
-          icon={<FaBook className="text-gray-400 mr-2" />}
-          value={chapters.year}
-          onChange={(v) => setChapters({ ...chapters, year: v })}
-        />
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">Publishing Year</label>
+          <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2">
+            <FaBook className="text-gray-400 mr-2" />
+            <input
+              type="number"
+              placeholder="e.g., 2024"
+              value={chapters.year}
+              onChange={(e) =>
+                setChapters({ ...chapters, year: e.target.value })
+              }
+              className="bg-transparent w-full outline-none"
+            />
+          </div>
+        </div>
 
-        <FieldInput
-          label="Publishing Agency"
-          icon={<FaBook className="text-gray-400 mr-2" />}
-          value={chapters.agency}
-          onChange={(v) => setChapters({ ...chapters, agency: v })}
-        />
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">Publishing Agency</label>
+          <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2">
+            <FaBook className="text-gray-400 mr-2" />
+            <input
+              type="text"
+              placeholder="Enter agency name"
+              value={chapters.agency}
+              onChange={(e) =>
+                setChapters({ ...chapters, agency: e.target.value })
+              }
+              className="bg-transparent w-full outline-none"
+            />
+          </div>
+        </div>
       </div>
 
       {/* Save Buttons */}
-      <div className="flex justify-end gap-3 mt-10">
+      <div className="flex justify-end gap-3 mt-6">
         <button className="px-5 py-2 rounded-lg border border-gray-400 hover:bg-gray-100">
           Cancel
         </button>
-
         <button
           disabled={!isValidJournal}
           className={`px-5 py-2 rounded-lg bg-purple-600 text-white ${
@@ -350,69 +556,6 @@ export default function ResearchPublications() {
         >
           Save & Continue
         </button>
-      </div>
-    </div>
-  );
-}
-
-/* ----------------------------------------------------------- */
-/* ----------------------- UI COMPONENTS ---------------------- */
-/* ----------------------------------------------------------- */
-
-function FieldInput({
-  label,
-  icon,
-  value,
-  placeholder = "",
-  type = "text",
-  onChange,
-  full,
-}) {
-  return (
-    <div className={`flex flex-col ${full ? "md:col-span-2" : ""}`}>
-      <label className="text-gray-700 font-medium ml-1 mb-1">{label}</label>
-      <div
-        className="border-2 border-gray-200 bg-gray-100 rounded-md p-2
-        focus-within:border-purple-500 hover:border-purple-500 transition duration-200"
-      >
-        <div className="flex items-center">
-          {icon}
-          <input
-            type={type}
-            value={value}
-            placeholder={placeholder}
-            onChange={(e) => onChange(e.target.value)}
-            className="bg-transparent w-full outline-none"
-          />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function FieldSelect({ label, icon, value, onChange, options }) {
-  return (
-    <div className="flex flex-col">
-      <label className="text-gray-700 font-medium ml-1 mb-1">{label}</label>
-      <div
-        className="border-2 border-gray-200 bg-gray-100 rounded-md p-2
-        focus-within:border-purple-500 hover:border-purple-500 transition duration-200"
-      >
-        <div className="flex items-center">
-          {icon}
-          <select
-            value={value}
-            onChange={(e) => onChange(e.target.value)}
-            className="bg-transparent outline-none w-full"
-          >
-            <option value="">Select</option>
-            {options.map((opt) => (
-              <option key={opt} value={opt}>
-                {opt}
-              </option>
-            ))}
-          </select>
-        </div>
       </div>
     </div>
   );

@@ -37,14 +37,15 @@ export default function CollaborationsEditorships() {
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-
         {/* Collaborator Name */}
         <div className="flex flex-col">
           <label className="text-gray-700 font-medium ml-1 mb-1">
             Collaborator Name<span className="text-red-500"> *</span>
           </label>
-          <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
-          focus-within:border-purple-500 hover:border-purple-500 transition-colors">
+          <div
+            className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
+          focus-within:border-purple-500 hover:border-purple-500 transition-colors"
+          >
             <div className="flex items-center">
               <FaUser className="text-gray-400 text-lg mr-2" />
               <input
@@ -63,8 +64,10 @@ export default function CollaborationsEditorships() {
           <label className="text-gray-700 font-medium ml-1 mb-1">
             Organization<span className="text-red-500"> *</span>
           </label>
-          <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
-          focus-within:border-purple-500 hover:border-purple-500 transition-colors">
+          <div
+            className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
+          focus-within:border-purple-500 hover:border-purple-500 transition-colors"
+          >
             <div className="flex items-center">
               <FaBuilding className="text-gray-400 text-lg mr-2" />
               <input
@@ -83,8 +86,10 @@ export default function CollaborationsEditorships() {
           <label className="text-gray-700 font-medium ml-1 mb-1">
             National / International<span className="text-red-500"> *</span>
           </label>
-          <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
-          focus-within:border-purple-500 hover:border-purple-500 transition-colors">
+          <div
+            className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
+          focus-within:border-purple-500 hover:border-purple-500 transition-colors"
+          >
             <div className="flex items-center">
               <FaGlobe className="text-gray-400 text-lg mr-2" />
               <input
@@ -103,8 +108,10 @@ export default function CollaborationsEditorships() {
           <label className="text-gray-700 font-medium ml-1 mb-1">
             Nature of Collaboration<span className="text-red-500"> *</span>
           </label>
-          <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
-          focus-within:border-purple-500 hover:border-purple-500 transition-colors">
+          <div
+            className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
+          focus-within:border-purple-500 hover:border-purple-500 transition-colors"
+          >
             <div className="flex items-center">
               <MdOutlineWork className="text-gray-400 text-lg mr-2" />
               <input
@@ -123,14 +130,15 @@ export default function CollaborationsEditorships() {
       <h2 className="text-xl font-semibold mt-8 mb-3">Editorships</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        
         {/* Journal Name */}
         <div className="flex flex-col">
           <label className="text-gray-700 font-medium ml-1 mb-1">
             Journal Name<span className="text-red-500"> *</span>
           </label>
-          <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
-          focus-within:border-purple-500 hover:border-purple-500 transition-colors">
+          <div
+            className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
+          focus-within:border-purple-500 hover:border-purple-500 transition-colors"
+          >
             <div className="flex items-center">
               <FaPenFancy className="text-gray-400 text-lg mr-2" />
               <input
@@ -149,8 +157,10 @@ export default function CollaborationsEditorships() {
           <label className="text-gray-700 font-medium ml-1 mb-1">
             Impact Factor<span className="text-red-500"> *</span>
           </label>
-          <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
-          focus-within:border-purple-500 hover:border-purple-500 transition-colors">
+          <div
+            className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
+          focus-within:border-purple-500 hover:border-purple-500 transition-colors"
+          >
             <div className="flex items-center">
               <FaPenFancy className="text-gray-400 text-lg mr-2" />
               <input
@@ -169,8 +179,10 @@ export default function CollaborationsEditorships() {
           <label className="text-gray-700 font-medium ml-1 mb-1">
             National / International<span className="text-red-500"> *</span>
           </label>
-          <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
-          focus-within:border-purple-500 hover:border-purple-500 transition-colors">
+          <div
+            className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
+          focus-within:border-purple-500 hover:border-purple-500 transition-colors"
+          >
             <div className="flex items-center">
               <FaGlobe className="text-gray-400 text-lg mr-2" />
               <input
@@ -183,7 +195,6 @@ export default function CollaborationsEditorships() {
             </div>
           </div>
         </div>
-
       </div>
 
       {/* Buttons */}
@@ -194,7 +205,11 @@ export default function CollaborationsEditorships() {
         <button
           disabled={!isValid}
           className={`px-5 py-2 rounded-lg bg-purple-600 text-white 
-            ${!isValid ? "opacity-50 cursor-not-allowed" : "hover:bg-purple-700 hover:scale-105"} 
+            ${
+              !isValid
+                ? "opacity-50 cursor-not-allowed"
+                : "hover:bg-purple-700 hover:scale-105"
+            } 
             transition-transform`}
         >
           Save & Continue

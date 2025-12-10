@@ -33,7 +33,6 @@ export default function Patents() {
       <h2 className="text-xl font-semibold mb-3">Patent Granted</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-2 mb-6">
-
         {/* Ref Number */}
         <div className="flex flex-col">
           <label
@@ -42,8 +41,10 @@ export default function Patents() {
           >
             Ref Number<span className="text-red-500"> *</span>
           </label>
-          <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
-          focus-within:border-purple-500 hover:border-purple-500 transition">
+          <div
+            className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
+          focus-within:border-purple-500 hover:border-purple-500 transition"
+          >
             <div className="flex items-center">
               <FaHashtag className="text-gray-400 text-lg mr-2" />
               <input
@@ -66,8 +67,10 @@ export default function Patents() {
           >
             Country<span className="text-red-500"> *</span>
           </label>
-          <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
-          focus-within:border-purple-500 hover:border-purple-500 transition">
+          <div
+            className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
+          focus-within:border-purple-500 hover:border-purple-500 transition"
+          >
             <div className="flex items-center">
               <FaGlobe className="text-gray-400 text-lg mr-2" />
               <input
@@ -90,8 +93,10 @@ export default function Patents() {
           >
             Date<span className="text-red-500"> *</span>
           </label>
-          <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
-          focus-within:border-purple-500 hover:border-purple-500 transition">
+          <div
+            className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
+          focus-within:border-purple-500 hover:border-purple-500 transition"
+          >
             <div className="flex items-center">
               <MdDateRange className="text-gray-400 text-lg mr-2" />
               <input
@@ -111,10 +116,13 @@ export default function Patents() {
             htmlFor="grantAffiliation"
             className="taxt-gray-700 font-medium ml-1 mb-1"
           >
-            Affiliation with Organization<span className="text-red-500"> *</span>
+            Affiliation with Organization
+            <span className="text-red-500"> *</span>
           </label>
-          <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
-          focus-within:border-purple-500 hover:border-purple-500 transition">
+          <div
+            className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
+          focus-within:border-purple-500 hover:border-purple-500 transition"
+          >
             <div className="flex items-center">
               <FaBuilding className="text-gray-400 text-lg mr-2" />
               <input
@@ -134,7 +142,6 @@ export default function Patents() {
       <h2 className="text-xl font-semibold mb-3">Patent Submitted</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-2">
-
         {/* Submission Date */}
         <div className="flex flex-col">
           <label
@@ -143,8 +150,10 @@ export default function Patents() {
           >
             Submission Date<span className="text-red-500"> *</span>
           </label>
-          <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
-          focus-within:border-purple-500 hover:border-purple-500 transition">
+          <div
+            className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
+          focus-within:border-purple-500 hover:border-purple-500 transition"
+          >
             <div className="flex items-center">
               <MdDateRange className="text-gray-400 text-lg mr-2" />
               <input
@@ -166,8 +175,10 @@ export default function Patents() {
           >
             Country<span className="text-red-500"> *</span>
           </label>
-          <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
-          focus-within:border-purple-500 hover:border-purple-500 transition">
+          <div
+            className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
+          focus-within:border-purple-500 hover:border-purple-500 transition"
+          >
             <div className="flex items-center">
               <FaGlobe className="text-gray-400 text-lg mr-2" />
               <input
@@ -188,10 +199,13 @@ export default function Patents() {
             htmlFor="subAffiliation"
             className="taxt-gray-700 font-medium ml-1 mb-1"
           >
-            Affiliation with Organization<span className="text-red-500"> *</span>
+            Affiliation with Organization
+            <span className="text-red-500"> *</span>
           </label>
-          <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
-          focus-within:border-purple-500 hover:border-purple-500 transition">
+          <div
+            className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 
+          focus-within:border-purple-500 hover:border-purple-500 transition"
+          >
             <div className="flex items-center">
               <FaBuilding className="text-gray-400 text-lg mr-2" />
               <input
@@ -215,7 +229,11 @@ export default function Patents() {
         <button
           disabled={!isValid}
           className={`px-5 py-2 rounded-lg bg-purple-600 text-white 
-            ${!isValid ? "opacity-50 cursor-not-allowed" : "hover:bg-purple-700 hover:scale-105"} 
+            ${
+              !isValid
+                ? "opacity-50 cursor-not-allowed"
+                : "hover:bg-purple-700 hover:scale-105"
+            } 
             transition-transform`}
         >
           Save & Continue
