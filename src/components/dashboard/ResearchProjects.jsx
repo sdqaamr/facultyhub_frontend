@@ -90,17 +90,27 @@ export default function ResearchProjects() {
         {/* PI/Co-PI */}
         <div className="flex flex-col">
           <label className="text-gray-700 font-medium mb-1">
-            PI / Co-PI <span className="text-red-500">*</span>
+            Role <span className="text-red-500">*</span>
           </label>
           <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 flex items-center hover:border-purple-500 transition">
             <FaUserTie className="text-gray-400 mr-2" />
-            <input
+            <select
+              value={awarded.agencyType}
+              onChange={(e) =>
+                setAwarded({ ...awarded, agencyType: e.target.value })
+              }
+              className="bg-transparent outline-none text-gray-600 w-full"
+            >
+              <option value="National">PI (Principal Investor)</option>
+              <option value="International">Co-PI</option>
+            </select>
+            {/* <input
               type="text"
               placeholder="Principal Investigator"
               value={awarded.role}
               onChange={(e) => setAwarded({ ...awarded, role: e.target.value })}
               className="bg-transparent outline-none w-full"
-            />
+            /> */}
           </div>
         </div>
 

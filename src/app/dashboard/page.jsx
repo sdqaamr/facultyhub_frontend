@@ -1,7 +1,6 @@
 "use client";
 
-import { IoPersonOutline  } from "react-icons/io5"
-import { LogOutIcon, Settings, UserCircle } from "lucide-react"
+import { LogOutIcon, Settings, UserCircle } from "lucide-react";
 import { useState } from "react";
 
 import PersonalInfo from "@/components/dashboard/PersonalInfo";
@@ -103,11 +102,10 @@ export default function FacultyDashboard() {
       </div>
 
       {/* RIGHT CONTENT AREA */}
-     {/* <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} /> */}
+      {/* <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} /> */}
 
       {/* Right Panel */}
       <div className="p-8 ml-70 flex-1">
-
         {activeTab === "Personal" && <PersonalInfo />}
         {activeTab === "Education" && <Education />}
         {activeTab === "Conferences" && <Conferences />}

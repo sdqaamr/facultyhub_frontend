@@ -1,11 +1,15 @@
 "use client";
 import { useState } from "react";
-import { FaCalendarAlt } from "react-icons/fa";
+import { FaCalendarAlt, FaMicrophoneAlt } from "react-icons/fa";
+import { MdTitle } from "react-icons/md";
+import { FaLocationDot } from "react-icons/fa6";
 
 export default function WorkshopsTrainings() {
   const emptyItem = {
-    type: "Organized",
+    category: "Organized",
     level: "",
+    title: "",
+    location: "",
     from: "",
     to: "",
   };
@@ -50,18 +54,19 @@ export default function WorkshopsTrainings() {
 
           {/* Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {/* Type */}
+            {/* Category */}
             <div className="flex flex-col">
               <label className="text-gray-700 font-medium ml-1 mb-1">
-                Type
+                Category
               </label>
 
-              <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 hover:border-purple-500 focus-within:border-purple-500 transition">
+              <div className="border-2 flex flex-row border-gray-200 bg-gray-100 rounded-md p-2 hover:border-purple-500 focus-within:border-purple-500 transition">
+                <FaMicrophoneAlt className="text-gray-400 mr-1.5 text-lg pt-0.5" />
                 <select
-                  value={item.type}
+                  value={item.category}
                   onChange={(e) => {
                     const updated = [...items];
-                    updated[index].type = e.target.value;
+                    updated[index].category = e.target.value;
                     setItems(updated);
                   }}
                   className="w-full bg-transparent outline-none text-gray-800"
@@ -78,7 +83,8 @@ export default function WorkshopsTrainings() {
                 Level
               </label>
 
-              <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 hover:border-purple-500 focus-within:border-purple-500 transition">
+              <div className="border-2 flex flex-row border-gray-200 bg-gray-100 rounded-md p-2 hover:border-purple-500 focus-within:border-purple-500 transition">
+                <FaMicrophoneAlt className="text-gray-400 mr-1.5 text-lg pt-0.5" />
                 <select
                   value={item.level}
                   onChange={(e) => {
@@ -94,6 +100,48 @@ export default function WorkshopsTrainings() {
                   <option value="National">National</option>
                   <option value="International">International</option>
                 </select>
+              </div>
+            </div>
+
+            {/* Title */}
+            <div className="flex flex-col">
+              <label className="text-gray-700 font-medium ml-1 mb-1">
+                Title
+              </label>
+
+              <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 flex items-center hover:border-purple-500 focus-within:border-purple-500 transition">
+                <MdTitle className="text-gray-400 mr-2 text-lg" />
+                <input
+                  placeholder="International Conference on Data Science"
+                  value={item.title}
+                  onChange={(e) => {
+                    const updated = [...items];
+                    updated[index].title = e.target.value;
+                    setItems(updated);
+                  }}
+                  className="w-full bg-transparent outline-none text-gray-800 placeholder-gray-500"
+                />
+              </div>
+            </div>
+
+            {/* Location */}
+            <div className="flex flex-col">
+              <label className="text-gray-700 font-medium ml-1 mb-1">
+                Location
+              </label>
+
+              <div className="border-2 border-gray-200 bg-gray-100 rounded-md p-2 flex items-center hover:border-purple-500 focus-within:border-purple-500 transition">
+                <FaLocationDot className="text-gray-400 mr-2 text-lg" />
+                <input
+                  placeholder="Lahore, Pakistan"
+                  value={item.location}
+                  onChange={(e) => {
+                    const updated = [...items];
+                    updated[index].location = e.target.value;
+                    setItems(updated);
+                  }}
+                  className="w-full bg-transparent outline-none text-gray-800 placeholder-gray-500"
+                />
               </div>
             </div>
 

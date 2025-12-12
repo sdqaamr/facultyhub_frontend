@@ -15,7 +15,6 @@ export default function EmploymentRecord() {
     organization.trim() !== "" &&
     sectorType.trim() !== "" &&
     post.trim() !== "" &&
-    bpsTts.trim() !== "" &&
     dateFrom.trim() !== "" &&
     dateTo.trim() !== "";
 
@@ -120,7 +119,6 @@ export default function EmploymentRecord() {
             className="taxt-gray-700 font-medium text-left ml-1 mb-1"
           >
             BPS / TTS (If applicable)
-            <span className="text-red-500"> *</span>
           </label>
 
           <div

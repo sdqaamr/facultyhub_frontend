@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FaUserAlt, FaBook, FaGlobe, FaLink } from "react-icons/fa";
 import { MdOutlineCategory } from "react-icons/md";
 import { Globe } from "lucide-react";
+import { FaMicrophoneAlt } from "react-icons/fa";
 
 export default function ResearchPublications() {
   const [journal, setJournal] = useState({
@@ -13,7 +14,6 @@ export default function ResearchPublications() {
     publishingYear: "",
     volume: "",
     impactFactor: "",
-    example: "",
     doiUrl: "",
     journalType: "",
     hecRecognized: "",
@@ -32,7 +32,7 @@ export default function ResearchPublications() {
   const [books, setBooks] = useState({
     title: "",
     author: "",
-    year: "",
+    date: "",
     agency: "",
     type: "",
   });
@@ -41,7 +41,7 @@ export default function ResearchPublications() {
     title: "",
     author: "",
     bookName: "",
-    year: "",
+    date: "",
     agency: "",
   });
 
@@ -52,7 +52,6 @@ export default function ResearchPublications() {
     journal.publishingYear &&
     journal.volume &&
     journal.impactFactor &&
-    journal.example &&
     journal.doiUrl &&
     journal.journalType &&
     journal.hecRecognized &&
@@ -186,20 +185,6 @@ export default function ResearchPublications() {
         </div>
       </div>
 
-      {/* Example */}
-      <div className="flex flex-col">
-        <label className="text-gray-700 mb-1">
-          Example Reference<span className="text-red-500"> *</span>
-        </label>
-        <textarea
-          value={journal.example}
-          placeholder="Paste full reference..."
-          rows={4}
-          onChange={(e) => setJournal({ ...journal, example: e.target.value })}
-          className="border-2 border-gray-200 bg-gray-100 rounded-md p-3 resize-none focus:border-purple-500 hover:border-purple-500 outline-none"
-        />
-      </div>
-
       {/* DOI */}
       <div className="flex flex-col">
         <label className="text-gray-700 mb-1">
@@ -244,6 +229,7 @@ export default function ResearchPublications() {
             HEC Recognized<span className="text-red-500"> *</span>
           </label>
           <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2 hover:border-purple-500 focus-within:border-purple-500 transition">
+            <FaGlobe className="text-gray-400 mr-2" />
             <select
               value={journal.hecRecognized}
               onChange={(e) =>
@@ -264,15 +250,20 @@ export default function ResearchPublications() {
           </label>
           <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2 hover:border-purple-500 focus-within:border-purple-500 transition">
             <MdOutlineCategory className="text-gray-400 mr-2" />
-            <input
-              type="text"
-              placeholder="Enter category"
+            <select
               value={journal.hrjsCategory}
               onChange={(e) =>
                 setJournal({ ...journal, hrjsCategory: e.target.value })
               }
               className="bg-transparent w-full outline-none"
-            />
+            >
+              <option value="">Select</option>
+              <option value="W">W</option>
+              <option value="X">X</option>
+              <option value="Y">Y</option>
+              <option value="Z">Z</option>
+              <option value="None">None</option>
+            </select>
           </div>
         </div>
       </div>
@@ -348,7 +339,7 @@ export default function ResearchPublications() {
         <div className="flex flex-col">
           <label className="text-gray-700 mb-1">National / International</label>
           <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2">
-            <Globe className="text-gray-500 mr-2 w-4 h-4" />
+            <FaGlobe className="text-gray-400 mr-2" />
             <select
               value={abstracts.type}
               onChange={(e) =>
@@ -366,6 +357,7 @@ export default function ResearchPublications() {
         <div className="flex flex-col">
           <label className="text-gray-700 mb-1">Oral / Poster</label>
           <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2">
+            <FaMicrophoneAlt className="text-gray-400 mr-2" />
             <select
               value={abstracts.mode}
               onChange={(e) =>
@@ -413,14 +405,13 @@ export default function ResearchPublications() {
         </div>
 
         <div className="flex flex-col">
-          <label className="text-gray-700 mb-1">Publishing Year</label>
+          <label className="text-gray-700 mb-1">Publish Date</label>
           <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2">
             <FaBook className="text-gray-400 mr-2" />
             <input
-              type="number"
-              placeholder="e.g., 2024"
-              value={books.year}
-              onChange={(e) => setBooks({ ...books, year: e.target.value })}
+              type="date"
+              value={books.date}
+              onChange={(e) => setBooks({ ...books, date: e.target.value })}
               className="bg-transparent w-full outline-none"
             />
           </div>
@@ -443,7 +434,7 @@ export default function ResearchPublications() {
         <div className="flex flex-col">
           <label className="text-gray-700 mb-1">National / International</label>
           <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2">
-            <Globe className="text-gray-500 mr-2 w-4 h-4" />
+            <FaGlobe className="text-gray-400 mr-2" />
             <select
               value={books.type}
               onChange={(e) => setBooks({ ...books, type: e.target.value })}
@@ -509,15 +500,14 @@ export default function ResearchPublications() {
         </div>
 
         <div className="flex flex-col">
-          <label className="text-gray-700 mb-1">Publishing Year</label>
+          <label className="text-gray-700 mb-1">Publish Date</label>
           <div className="flex items-center border-2 border-gray-200 bg-gray-100 rounded-md p-2">
             <FaBook className="text-gray-400 mr-2" />
             <input
-              type="number"
-              placeholder="e.g., 2024"
-              value={chapters.year}
+              type="date"
+              value={chapters.date}
               onChange={(e) =>
-                setChapters({ ...chapters, year: e.target.value })
+                setChapters({ ...chapters, date: e.target.value })
               }
               className="bg-transparent w-full outline-none"
             />
